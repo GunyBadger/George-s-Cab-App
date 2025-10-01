@@ -126,17 +126,29 @@ public class BookingController {
     }
 
     */
-
+/*
     @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String bookCabForm(
     		BookingRequest request,
             org.springframework.web.servlet.mvc.support.RedirectAttributes redirect) {
+
         String msg = processBooking(request);          // create then save then format the message
+        redirect.addAttribute("response", msg);        // add to the URL as a query parameter
         redirect.addFlashAttribute("response", msg);   // store the data for the next request
+
         return "redirect:/";                           // instead of showing all the listings in a java format I return the listing to the home page in the Booking Details card
     }
 
+*/
 
+
+    @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public String bookCabForm(BookingRequest request,
+                              org.springframework.ui.Model model) {
+        String msg = processBooking(request);
+        model.addAttribute("response", msg);  // makes ${response} available to index.html
+        return "index";                       // render templates/index.html directly
+    }
 
 
     // get booking by id

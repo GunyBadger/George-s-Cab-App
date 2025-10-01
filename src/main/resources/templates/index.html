@@ -48,12 +48,13 @@
 
     <div class="actions">
       <button class="primary" type="submit">Book</button>
-      <a class="primary" href="/book" style="padding:10px 16px; border-radius:10px; background:#0d6efd; color:#fff; text-decoration:none; display:inline-block;">List Bookings</a>
     </div>
+
   </form>
 
 	<div class="card">
 	  <h3>Booking Details</h3>
+      <a class="primary" href="/book" style="padding:10px 16px; border-radius:10px; background:#0d6efd; color:#fff; text-decoration:none; display:inline-block;">List Bookings</a>
 	  <pre id="response" th:text="${response} ?: '—'">—</pre>
 	</div>
 
