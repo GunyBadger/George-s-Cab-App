@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cab Booking</title>
-  <style>
+ <style>
     body { font-family: system-ui, Arial, sans-serif; max-width: 680px; margin: 24px auto; }
     h1 { margin-bottom: 0.25rem; }
     .muted { color: #666; font-size: 0.9rem; margin-bottom: 16px; }
-    form, .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 12px 0; }
+    form, .card { border: 2px solid #ddd; border-radius: 20px; padding: 16px; margin: 20px 0; }
+    #response{ white-space: pre-wrap; word-break: break-word; overflow-wrap: anywhere; }
     label { display: block; margin: 8px 0 4px; }
     input[type="text"], input[type="number"] { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 8px; }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -54,8 +55,11 @@
 
 	<div class="card">
 	  <h3>Booking Details</h3>
-      <a class="primary" href="/book" style="padding:10px 16px; border-radius:10px; background:#0d6efd; color:#fff; text-decoration:none; display:inline-block;">List Bookings</a>
 	  <pre id="response" th:text="${response} ?: '—'">—</pre>
+	</div>
+
+	<div>
+      <a class="primary" href="/book" style="padding:10px 16px; border-radius:10px; background:#0d6efd; color:#fff; text-decoration:none; display:inline-block;">List All Bookings</a>
 	</div>
 
   <div class="links">
