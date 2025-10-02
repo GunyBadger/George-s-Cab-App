@@ -67,7 +67,7 @@ public class BookingController {
     			+ " confirmed for " + saved.getPassengerName()
     			+ " from " + saved.getPickup()
     			+" to " + saved.getDropLocation()
-    			+ "at" + when
+    			+ " at " + when
     			+ ", covering " + saved.getDistance() + " km. Fare: $"
     			+ String.format("%.2f", saved.getFare());
     }
